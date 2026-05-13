@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ranit Computer Center</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        header {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #00e6e6;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #00e6e6;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* CONTACT BOX */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .contact-info, .contact-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 320px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            color: #ccc;
+        }
+
+        /* FORM */
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background: #00e6e6;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* MAP */
+        .map {
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Ranit Computer Center</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/courses">Courses</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- TITLE -->
+    <section class="section">
+        <h2>Contact Us 📞</h2>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <div class="contact-container">
+
+        <!-- INFO -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>📍 Durgapur, West Bengal</p>
+            <p>📞 +91 9876543210</p>
+            <p>📧 ranitcenter@gmail.com</p>
+        </div>
+
+        <!-- FORM -->
+        <div class="contact-form">
+            <h3>Send Message</h3>
+
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button class="btn">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Durgapur%20West%20Bengal&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Ranit Computer Center | All Rights Reserved
+    </footer>
+
+    <!-- JS -->
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert("Message sent successfully! (Frontend only)");
+        }
+    </script>
+
+</body>
+</html>

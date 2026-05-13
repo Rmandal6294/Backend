@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>LogIn</title>
+</head>
+<body>
+    <div class="w-full h-screen bg-black/90 p-10 flex flex-col justify-center items-center">
+        <h1 class="font-bold text-white mb-20 text-3xl"> LogIn </h1>
+
+        <form action = "/login" method="post" class="lg:w-1/2 w-full flex flex-col justify-center items-center p-10 border-2 border-white gap-10">
+            <input class=" outline-none border-1 border-white p-2 rounded text-gray-400 w-full" type = "email" placeholder="email" name = "email" />
+            <input class=" outline-none border-1 border-white p-2 rounded text-gray-400 w-full" type = "password" placeholder="password" name = "password" />
+            <input class="w-1/2 p-4 bg-blue-500 rounded-lg text-lg font-bold text-white cursor-pointer" type ="submit" value = "Log In"/>
+        </form>
+
+        <button onclick= "onclickBtn()" class="mt-30 bg-blue-300 p-5 w-1/2 rounded-lg font-bold text-white cursor-pointer"> SingUp </button>
+    </div>
+
+    <script>
+        const onclickBtn = () =>{
+            window.location.href = "/"
+        }
+    </script>
+</body>
+</html>

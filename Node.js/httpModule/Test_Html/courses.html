@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Ranit Computer Center</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        header {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #00e6e6;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #00e6e6;
+        }
+
+        .title {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .title h2 {
+            font-size: 40px;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 50px;
+        }
+
+        .course-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-card h3 {
+            color: #00e6e6;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .price {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #00e6e6;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Ranit Computer Center</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/courses">Courses</a>
+        </nav>
+    </header>
+
+    <!-- TITLE -->
+    <section class="title">
+        <h2>Our Courses 🎓</h2>
+        <p>Choose the best course for your career</p>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses">
+
+        <div class="course-card">
+            <h3>Basic Computer Course</h3>
+            <p>MS Word, Excel, PowerPoint, Internet</p>
+            <div class="details">Duration: 3 Months</div>
+            <div class="price">₹3000</div>
+            <button class="btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript + Projects</p>
+            <div class="details">Duration: 6 Months</div>
+            <div class="price">₹8000</div>
+            <button class="btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Programming (C/Java/Python)</h3>
+            <p>Strong coding foundation</p>
+            <div class="details">Duration: 6 Months</div>
+            <div class="price">₹7000</div>
+            <button class="btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Tally with GST</h3>
+            <p>Accounting & GST practical training</p>
+            <div class="details">Duration: 4 Months</div>
+            <div class="price">₹5000</div>
+            <button class="btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Advanced Excel</h3>
+            <p>Formulas, Pivot Tables, Data Analysis</p>
+            <div class="details">Duration: 2 Months</div>
+            <div class="price">₹4000</div>
+            <button class="btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Cyber Security Basics</h3>
+            <p>Security, ethical hacking basics</p>
+            <div class="details">Duration: 3 Months</div>
+            <div class="price">₹6000</div>
+            <button class="btn">Enroll Now</button>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Ranit Computer Center | All Rights Reserved
+    </footer>
+
+</body>
+</html>

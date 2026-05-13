@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - My Computer Center</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .course {
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .course h3 {
+      margin-top: 0;
+      color: #004080;
+    }
+    .course p {
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>My Computer Center</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/courses">Courses</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Courses Section -->
+  <section>
+    <h2>Our Courses</h2>
+    <div class="course-list">
+      <div class="course">
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, and JavaScript to build modern, responsive websites. Perfect for beginners and aspiring developers.</p>
+      </div>
+      <div class="course">
+        <h3>Python Programming</h3>
+        <p>Master Python fundamentals, data handling, and automation. A great choice for coding enthusiasts and professionals.</p>
+      </div>
+      <div class="course">
+        <h3>Computer Basics</h3>
+        <p>Get comfortable with essential computer skills, including operating systems, file management, and internet usage.</p>
+      </div>
+      <div class="course">
+        <h3>Advanced Java</h3>
+        <p>Dive deeper into object‑oriented programming, frameworks, and enterprise‑level applications with Java.</p>
+      </div>
+      <div class="course">
+        <h3>Cybersecurity Essentials</h3>
+        <p>Understand online safety, data protection, and security practices to safeguard your digital presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 My Computer Center. All rights reserved.</p>
+  </footer>
+</body>
+</html>

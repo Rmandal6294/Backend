@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styleLogin.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <form action="/login" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <p> Try - admin / admin</p>
+        
+        <button type="submit">Login</button>
+    </form>
+
+    <footer>
+        <p>&copy; 2024 My Express App</p>
+    </footer>
+</body>
+</html>

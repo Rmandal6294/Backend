@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - My Computer Center</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+    .contact-card h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #003366;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>My Computer Center</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/courses">Courses</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section>
+    <div class="contact-card">
+      <h2>Get in Touch</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 My Computer Center. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="contact.js"></script>
+</body>
+</html>

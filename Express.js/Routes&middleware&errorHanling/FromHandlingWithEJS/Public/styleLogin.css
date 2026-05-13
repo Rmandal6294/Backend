@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ P{
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    background-color: #e1f5fe;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #4a90e2;
+    margin-bottom: 20px;
+ }
+
+h1{
+    color: #4a90e2;
+    text-align: center;
+    border-bottom: 3px solid #4a90e2;
+    padding: 15px;
+    background-color: #e1f5fe;
+    border-radius: 8px;
+}
+
+form{
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label{
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
