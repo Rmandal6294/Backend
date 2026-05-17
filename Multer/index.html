@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>File-Multer</title>
+</head>
+
+<body class="bg-black/70 flex flex-wrap justify-center items-center">
+    <div class="p-10 w- 70">
+        <h1 class="text-lg font-bold text-center text-white/40">
+            Upload Single File
+        </h1>
+
+        <form class="mb-3 flex flex-wrap justify-center items-center" action="/profile" method="post"
+            enctype="multipart/form-data">
+            <input class="bg-white p-5 border-3 border-black/50 rounded-md cursor-pointer" type="file" name="image"
+                title="upload" />
+            <input class="bg-blue-400 p-4 m-10 w-40 text-lg text-white rounded cursor-pointer" type="submit"
+                value="Upload" />
+        </form>
+    </div>
+
+    <div>
+        <h1 class="text-lg font-bold text-center text-white/40">
+            Upload Multiple File
+        </h1>
+
+        <form class="mb-3 flex flex-wrap justify-center items-center" action="/multiple" method="post"
+            enctype="multipart/form-data">
+            <input class="bg-white p-5 border-3 border-black/50 rounded-md cursor-pointer" type="file" name="photos"
+                title="upload" multiple />
+            <input class="bg-blue-400 p-4 m-10 w-40 text-lg text-white rounded cursor-pointer" type="submit"
+                value="Upload" />
+        </form>
+    </div>
+
+    <div>
+        <h1 class="text-lg font-bold text-center text-white/40">
+            Upload Multiple Fields
+        </h1>
+
+        <form class="mb-3 flex flex-wrap justify-center items-center" action="/fields" method="post"
+            enctype="multipart/form-data">
+            <input class="bg-white p-5 border-3 border-black/50 rounded-md cursor-pointer" type="file" name="images"
+                title="upload" multiple />
+            <input class="bg-white p-5 border-3 border-black/50 rounded-md cursor-pointer" type="file" name="files"
+                title="upload" multiple />
+            <input class="bg-blue-400 p-4 m-10 w-40 text-lg text-white rounded cursor-pointer" type="submit"
+                value="Upload" />
+        </form>
+    </div>
+
+    <div class="bg-gray-400 p-10 rounded-md mb-10">
+        <h1 class="text-lg font-bold text-center text-white/90 mb-10">
+            Enter Details
+        </h1>
+
+        <form class="mb-3 flex flex-col gap-5 justify-center items-center" action="/profilePic" method="post"
+            enctype="multipart/form-data">
+            <label for="name" class="text-white font-bold ">Enter your name:</label>
+            <input class="bg-transparent w-80 p-5 border-3 border-black/50 rounded-md cursor-pointer outline-none"
+                type="text" name="name" title="upload" />
+            <input class="bg-white p-5 border-3 border-black/50 rounded-md cursor-pointer" type="file" name="pic"
+                title="upload" />
+            <input class="bg-blue-400 p-4 m-10 w-40 text-lg text-white rounded cursor-pointer" type="submit"
+                value="Upload" />
+        </form>
+
+        <div class="flex gap-10 flex-col">
+            <div class="w-20 h-20 rounded-full bg-gray-400 border-2 border-gray-700">
+                <img class="w-full h-full object-cover rounded-full overflow-hiddden" src="./uploads/ami.jpeg" alt="ami"
+                    id="img" title="profile image" />
+            </div>
+
+            <label for="name" class="text-white font-bold ">Enter your name:</label>
+            <input class="bg-transparent w-80 p-5 border-3 border-black/50 rounded-md cursor-pointer outline-none"
+                type="text" name="name" id="name" title="upload" />
+
+            <button onclick="getPic()" class="w-40 bg-blue-300 px-3 py-4 rounded">
+                Get Pic
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const getPic = async () => {
+            const name = document.getElementById("name").value;
+            const res = await fetch(`http://localhost:3000/img?name=${name}`);
+            if (!res.ok) return alert("User not found");
+            const filename = await res.text();
+            const img = document.getElementById("img");
+            img.setAttribute("src", `http://localhost:3000/uploads/${filename}`);
+        };
+    </script>
+</body>
+
+</html>
