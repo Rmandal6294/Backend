@@ -18,7 +18,7 @@ app.use(helmet()) // stops clickjacking ,  prevents MIME sniffing attacks,
 
 app.use(cors({
     origin: process.env.CLIENT_URL,// only http://localhost:5173 can call this API  every other website gets blocked
-    credential: true// allows cookies to be sent with requests needed because you use res.cookie() for your token
+    credentials: true// allows cookies to be sent with requests needed because you use res.cookie() for your token
 }))
 
 //! ---------------- Rate limiting ------------------------
@@ -37,38 +37,40 @@ app.use(express.urlencoded({
 app.use(cookieParser())
 
 //! ------- Route ------
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
     res.send("conncted")
 })
 
 app.post("/", userRequestLimiter, async (req, res) => {
-    const { name } = req.body;
-
-    const existUser = await User.findOne({name})
-    if(existUser) return res.status(409).json({message: "User Already Exits"})
-
     try {
-        const addName = await User.create({
-            name,
+        const { name } = req.body
+
+        const existUser = await User.findOne({ name })
+        if (existUser) return res.status(409).json({ message: "User already exists" })
+
+        const addName = await User.create({ name })
+        const token = jwt.sign({ userId: addName._id }, process.env.JWT_SECRET, { expiresIn: "7d" })
+
+        res.cookie("token", token, {
+            httpOnly: true,
+            sameSite: "lax",
+            maxAge: 7 * 24 * 60 * 60 * 1000
         })
-        const token = jwt.sign({userId: addName._id}, process.env.JWT_SECRET)
-        res.cookie("name", token)
-        res.status(200).json({
-            name : addName.name,
-            id: addName._id
-        })
-    } catch(err) {
-        res.status(401).json({message: ""})
+
+        return res.status(201).json({ name: addName.name, id: addName._id })
+
+    } catch (err) {
+        res.status(500).json({ message: err.message })
     }
 
 })
 
 //! Global error handler
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({ message: err.message })
+    res.status(err.status || 500).json({ message: err.message })
 })
 
 //! server running
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT, () => {
     console.log(`Server on port http://localhost:${process.env.PORT}`)
 })
